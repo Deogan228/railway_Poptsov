@@ -1,43 +1,43 @@
 package domain
 
-// Ticket class
+// Класс обслуживания
 enum ClassType:
   case Economy, Business
 
-// Route tariff
+// Тариф по маршруту
 case class RouteTariff(
-  route: String,          // e.g. "Moscow-SPb"
-  economy: Double,        // economy price
-  business: Double        // business price
+  route: String,          // название маршрута, напр. "Moscow-SPb"
+  economy: Double,        // цена эконом-класса
+  business: Double        // цена бизнес-класса
 )
 
-// Ticket office configuration (Reader environment)
+// Конфигурация кассы (окружение для Reader)
 case class TicketConfig(
-  tariffs: Map[String, RouteTariff],   // route name -> tariff
-  baggagePerKg: Double,               // surcharge per kg of baggage
-  seatRule: String,                    // seat assignment rule: "window" | "aisle" | "any"
-  refundPenaltyPercent: Double         // refund penalty as fraction 0..1
+  tariffs: Map[String, RouteTariff],   // маршрут -> тариф
+  baggagePerKg: Double,               // доплата за кг багажа
+  seatRule: String,                    // правило выбора места: "window" | "aisle" | "any"
+  refundPenaltyPercent: Double         // штраф за возврат (доля от 0 до 1)
 )
 
-// A sold ticket
+// Проданный билет
 case class Ticket(
   id: Int,
   route: String,
   classType: ClassType,
-  seat: String,           // e.g. "3A"
+  seat: String,           // напр. "3A"
   price: Double,
   baggageWeight: Double,
   baggageCost: Double
 )
 
-// A train with seat availability
+// Поезд с картой занятости мест
 case class Train(
-  name: String,                     // e.g. "Train 42"
+  name: String,                     // напр. "Express-1"
   route: String,
-  seats: Map[String, Boolean]       // seat label -> occupied?
+  seats: Map[String, Boolean]       // место -> занято?
 )
 
-// Global mutable state of the ticket office
+// Глобальное состояние кассы
 case class OfficeState(
   trains: List[Train],
   soldTickets: List[Ticket],

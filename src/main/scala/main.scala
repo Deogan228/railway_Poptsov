@@ -4,6 +4,7 @@ import plan.*
 import ui.{MenuLeaf, MenuTreeNode}
 
 @main def main(): Unit =
+  // Конфигурация кассы: тарифы, багаж, штраф за возврат
   val cfg = TicketConfig(
     tariffs = Map(
       "Moscow-SPb"     -> RouteTariff("Moscow-SPb",     2500, 5000),
@@ -15,10 +16,11 @@ import ui.{MenuLeaf, MenuTreeNode}
     refundPenaltyPercent = 0.15
   )
 
-  // Pre-create two trains with 3 rows x 4 columns = 12 seats each
+  // Создание карты мест: rows рядов по 4 места (A, B, C, D)
   def makeSeats(rows: Int): Map[String, Boolean] =
     (1 to rows).flatMap(r => Seq("A","B","C","D").map(c => s"$r$c" -> false)).toMap
 
+  // Начальное состояние: два поезда по 12 мест каждый
   val initState = OfficeState(
     trains = List(
       Train("Express-1", "Moscow-SPb",   makeSeats(3)),
@@ -29,26 +31,27 @@ import ui.{MenuLeaf, MenuTreeNode}
     nextTicketId = 1
   )
 
+  // Построение меню
   val root = MenuTreeNode(
-    "Railway Ticket Office",
+    "Железнодорожная касса",
     Seq(
-      MenuLeaf("Show trains",       showTrainsAction),
-      MenuLeaf("Show tickets",      showTicketsAction),
-      MenuLeaf("Book ticket",       bookTicketAction),
-      MenuLeaf("Cancel ticket",     cancelTicketAction),
-      MenuLeaf("Add train",         addTrainAction),
-      MenuLeaf("Next day",          nextDayAction),
-      MenuLeaf("Writer demo",       writerDemoAction)
+      MenuLeaf("Показать поезда",         showTrainsAction),
+      MenuLeaf("Показать билеты",         showTicketsAction),
+      MenuLeaf("Купить билет",            bookTicketAction),
+      MenuLeaf("Вернуть билет",           cancelTicketAction),
+      MenuLeaf("Добавить поезд",          addTrainAction),
+      MenuLeaf("Следующий день",          nextDayAction),
+      MenuLeaf("Демонстрация Writer",     writerDemoAction)
     )
   )
 
   val program =
     for
-      _ <- IO.writeLine("Railway Ticket Office (Monads)")
-      _ <- IO.writeLine(s"Routes: ${cfg.tariffs.keys.mkString(", ")}")
-      _ <- IO.writeLine(s"Baggage: ${cfg.baggagePerKg} per kg, refund penalty: ${cfg.refundPenaltyPercent * 100}%")
+      _ <- IO.writeLine("Железнодорожная касса (Монады)")
+      _ <- IO.writeLine(s"Маршруты: ${cfg.tariffs.keys.mkString(", ")}")
+      _ <- IO.writeLine(s"Багаж: ${cfg.baggagePerKg} за кг, штраф за возврат: ${cfg.refundPenaltyPercent * 100}%")
       _ <- root.userInteractionLoop(initState, cfg)
-      _ <- IO.writeLine("bye")
+      _ <- IO.writeLine("пока")
     yield ()
 
   program.unsafeRun()

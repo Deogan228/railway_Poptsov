@@ -2,24 +2,24 @@ package domain
 
 import monads.{*, given}
 
-// State transitions for the ticket office, with Writer logging
+// Переходы состояния кассы с логированием через Writer
 object FuncState:
 
-  // Book a ticket: choose train, seat, route, class, baggage
+  // Бронирование билета: выбор поезда, места, класса и багажа
   def bookTicket(trainName: String, seat: String, classType: ClassType,
                  baggageWeight: Double)(cfg: TicketConfig): State[OfficeState, Vector[String]] =
     State { s =>
       s.trains.find(_.name == trainName) match
         case None =>
-          (s, Writer.tell(s"Error: train $trainName not found").log)
+          (s, Writer.tell(s"Ошибка: поезд $trainName не найден").log)
         case Some(train) =>
           val available = FuncReader.seatAvailable(train, seat).run(cfg)
           if !available then
-            (s, Writer.tell(s"Error: seat $seat on $trainName is not available").log)
+            (s, Writer.tell(s"Ошибка: место $seat в поезде $trainName занято или не существует").log)
           else
             FuncReader.ticketPrice(train.route, classType).run(cfg) match
               case None =>
-                (s, Writer.tell(s"Error: no tariff for route ${train.route}").log)
+                (s, Writer.tell(s"Ошибка: тариф для маршрута ${train.route} не найден").log)
               case Some(price) =>
                 val bagCost = FuncReader.baggageCost(baggageWeight).run(cfg)
                 val ticket = Ticket(
@@ -40,20 +40,20 @@ object FuncState:
                   nextTicketId = s.nextTicketId + 1
                 )
                 val log = Vector(
-                  s"Ticket #${ticket.id} booked: $trainName, seat $seat, ${classType}, price=$price, baggage=$bagCost"
+                  s"Билет #${ticket.id} оформлен: $trainName, место $seat, $classType, цена=$price, багаж=$bagCost"
                 )
                 (ns, log)
     }
 
-  // Cancel a ticket by id
+  // Отмена билета по номеру с расчётом возврата
   def cancelTicket(ticketId: Int)(cfg: TicketConfig): State[OfficeState, Vector[String]] =
     State { s =>
       s.soldTickets.find(_.id == ticketId) match
         case None =>
-          (s, Writer.tell(s"Error: ticket #$ticketId not found").log)
+          (s, Writer.tell(s"Ошибка: билет #$ticketId не найден").log)
         case Some(ticket) =>
           val refund = FuncReader.refundAmount(ticket).run(cfg)
-          // free the seat
+          // освобождаем место в поезде
           val updatedTrains = s.trains.map { train =>
             if train.route == ticket.route then
               train.copy(seats = train.seats.updated(ticket.seat, false))
@@ -65,24 +65,24 @@ object FuncState:
             revenue = s.revenue - refund
           )
           val log = Vector(
-            s"Ticket #$ticketId cancelled, refund=$refund (penalty=${cfg.refundPenaltyPercent * 100}%)"
+            s"Билет #$ticketId отменён, возврат=$refund (штраф=${cfg.refundPenaltyPercent * 100}%)"
           )
           (ns, log)
     }
 
-  // Add a new train
+  // Добавление нового поезда в систему
   def addTrain(train: Train): State[OfficeState, Vector[String]] =
     State { s =>
       if s.trains.exists(_.name == train.name) then
-        (s, Writer.tell(s"Error: train ${train.name} already exists").log)
+        (s, Writer.tell(s"Ошибка: поезд ${train.name} уже существует").log)
       else
         val ns = s.copy(trains = s.trains :+ train)
-        (ns, Writer.tell(s"Train ${train.name} added, route=${train.route}, seats=${train.seats.size}").log)
+        (ns, Writer.tell(s"Поезд ${train.name} добавлен, маршрут=${train.route}, мест=${train.seats.size}").log)
     }
 
-  // Advance to next day: clear sold tickets, reset revenue counter
+  // Переход к следующему дню: сброс проданных билетов и выручки
   def nextDay: State[OfficeState, Vector[String]] =
     State { s =>
       val ns = s.copy(soldTickets = List.empty, revenue = 0.0)
-      (ns, Writer.tell(s"New day started. Previous revenue: ${s.revenue}, tickets cleared.").log)
+      (ns, Writer.tell(s"Новый день. Выручка за прошлый день: ${s.revenue}, билеты очищены.").log)
     }

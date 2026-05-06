@@ -3,7 +3,7 @@ package ui
 import domain.{TicketConfig, OfficeState}
 import monads.{*, given}
 
-// Dialog loop: show menu -> read input -> handle -> repeat or exit
+// Цикл диалога: показать меню → прочитать ввод → обработать → повторить или выйти
 trait UserInteraction:
   def show(state: OfficeState): String
   def readInput: IO[String] = IO.readLine

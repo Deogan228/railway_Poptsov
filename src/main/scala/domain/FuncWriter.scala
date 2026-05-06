@@ -2,25 +2,29 @@ package domain
 
 import monads.{*, given}
 
-// Logging key events through Writer
+// Логирование ключевых событий через монаду Writer
 object FuncWriter:
 
+  // Запись в лог выбора маршрута
   def logRouteChoice(route: String): Writer[String] =
     for
-      _ <- Writer.tell(s"Route selected: $route")
-    yield s"Route: $route"
+      _ <- Writer.tell(s"Выбран маршрут: $route")
+    yield s"Маршрут: $route"
 
+  // Запись в лог расчёта стоимости
   def logPriceCalc(route: String, price: Double, baggage: Double): Writer[String] =
     for
-      _ <- Writer.tell(s"Price calculated: ticket=$price, baggage=$baggage, total=${price + baggage}")
-    yield s"Total: ${price + baggage}"
+      _ <- Writer.tell(s"Расчёт цены: билет=$price, багаж=$baggage, итого=${price + baggage}")
+    yield s"Итого: ${price + baggage}"
 
+  // Запись в лог назначения места
   def logSeatAssigned(seat: String, train: String): Writer[String] =
     for
-      _ <- Writer.tell(s"Seat $seat assigned on $train")
-    yield s"Seat $seat on $train"
+      _ <- Writer.tell(s"Место $seat назначено в поезде $train")
+    yield s"Место $seat в поезде $train"
 
+  // Запись в лог возврата билета
   def logRefund(ticketId: Int, amount: Double): Writer[String] =
     for
-      _ <- Writer.tell(s"Refund ticket #$ticketId, amount=$amount")
-    yield s"Refunded $amount for ticket #$ticketId"
+      _ <- Writer.tell(s"Возврат билета #$ticketId, сумма=$amount")
+    yield s"Возвращено $amount за билет #$ticketId"
