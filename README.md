@@ -1,20 +1,24 @@
-## Controls
-- Enter menu item number and press Enter.
-- "0" to go back / exit.
+## Управление
+- Вводите номер пункта и нажмите Enter.
+- "0" — возврат / выход.
 
-## Variant 13. Railway Ticket Office
+## Вариант 13. Железнодорожная касса
 
-A ticket office that sells tickets, accounts for baggage and available seats.
+Касса продаёт билеты, учитывает багаж и свободные места.
 
 ### Reader
-From environment: route tariffs, baggage surcharge, seat rule, refund penalty.
+
+Из окружения: тарифы по направлениям, доплата за багаж, правило выбора места, штраф за возврат.
 
 ### Writer
-Logging: route selection, price calculation, seat assignment, refund.
+
+Логирование: выбор маршрута, расчёт цены, назначение места, возврат.
 
 ### State
-State: seats per train, sold tickets, revenue.
-Transitions: bookTicket, cancelTicket, addTrain, nextDay.
+
+Состояние: места по поездам, проданные билеты, выручка.
+Переходы: bookTicket, cancelTicket, addTrain, nextDay.
 
 ### IO
-Scenario: choose train, choose seat, buy or return a ticket.
+
+Сценарий: выбрать поезд, выбрать место, купить или вернуть билет.
