@@ -1,0 +1,173 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\railway-monads_3-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\ClassType$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\ClassType$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\ClassType$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\ClassType$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\ClassType.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\ClassType.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\ClassType.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\ClassType.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\FuncReader$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\FuncReader$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\FuncReader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\FuncReader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\FuncReader.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\FuncReader.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\FuncState$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\FuncState$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\FuncState.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\FuncState.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\FuncState.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\FuncState.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\FuncWriter$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\FuncWriter$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\FuncWriter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\FuncWriter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\FuncWriter.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\FuncWriter.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\OfficeState$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\OfficeState$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\OfficeState.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\OfficeState.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\OfficeState.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\OfficeState.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\RouteTariff$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\RouteTariff$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\RouteTariff.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\RouteTariff.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\RouteTariff.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\RouteTariff.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\Ticket$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\Ticket$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\Ticket.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\Ticket.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\Ticket.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\Ticket.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\TicketConfig$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\TicketConfig$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\TicketConfig.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\TicketConfig.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\TicketConfig.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\TicketConfig.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\Train$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\Train$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\Train.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\Train.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	domain\Train.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\domain\Train.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	main$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\main$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	main$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\main$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	main$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\main$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	main.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\main.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Applicative.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Applicative.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Applicative.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Applicative.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\IO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\IO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\IO$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\IO$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\IO$package$given_Monad_IO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\IO$package$given_Monad_IO$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\IO$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\IO$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\IO$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\IO$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\IO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\IO.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\IO.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\IO.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Monad$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Monad$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Monad$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Monad$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Monad$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Monad$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Monad.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Monad.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Monad.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Monad.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Reader$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Reader$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Reader$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Reader$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Reader$package$given_Monad_Reader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Reader$package$given_Monad_Reader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Reader$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Reader$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Reader$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Reader$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Reader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Reader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Reader.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Reader.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\State$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\State$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\State$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\State$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\State$package$given_Monad_State.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\State$package$given_Monad_State.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\State$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\State$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\State$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\State$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\State.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\State.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\State.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\State.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Writer$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Writer$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Writer$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Writer$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Writer$package$given_Monad_Writer$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Writer$package$given_Monad_Writer$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Writer$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Writer$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Writer$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Writer$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Writer.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Writer.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	monads\Writer.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\monads\Writer.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	plan[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\plan[0m
+[0m[[0m[0mdebug[0m] [0m[0m	plan\Plan$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\plan\Plan$package$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	plan\Plan$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\plan\Plan$package.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	plan\Plan$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\plan\Plan$package.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ui[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\ui[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ui\MenuLeaf$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\ui\MenuLeaf$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ui\MenuLeaf.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\ui\MenuLeaf.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ui\MenuLeaf.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\ui\MenuLeaf.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ui\MenuOption.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\ui\MenuOption.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ui\MenuOption.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\ui\MenuOption.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ui\MenuTreeNode$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\ui\MenuTreeNode$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ui\MenuTreeNode.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\ui\MenuTreeNode.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ui\MenuTreeNode.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\ui\MenuTreeNode.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ui\UserInteraction.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\ui\UserInteraction.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ui\UserInteraction.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\rusla\OneDrive\Рабочий стол\ФП\railway-monads\target\scala-3.3.1\classes\ui\UserInteraction.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
