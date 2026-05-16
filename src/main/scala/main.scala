@@ -1,4 +1,4 @@
-import domain.{TicketConfig, OfficeState, RouteTariff, Train, Storage}
+import domain.{TicketConfig, OfficeState, RouteTariff, Train}
 import monads.{*, given}
 import plan.*
 import ui.{MenuLeaf, MenuTreeNode}
@@ -18,7 +18,7 @@ import ui.{MenuLeaf, MenuTreeNode}
   def makeSeats(rows: Int): Map[String, Boolean] =
     (1 to rows).flatMap(r => Seq("A", "B", "C", "D").map(c => s"$r$c" -> false)).toMap
 
-  val defaultState = OfficeState(
+  val initState = OfficeState(
     trains = List(
       Train("Express-1", "Moscow-SPb",   makeSeats(3)),
       Train("Express-2", "Moscow-Kazan", makeSeats(3))
@@ -27,9 +27,6 @@ import ui.{MenuLeaf, MenuTreeNode}
     revenue      = 0.0,
     nextTicketId = 1
   )
-
-  // загружаем сохранённое состояние или используем начальное
-  val initState = Storage.load().getOrElse(defaultState)
 
   val root = MenuTreeNode(
     "Железнодорожная касса",
@@ -50,9 +47,8 @@ import ui.{MenuLeaf, MenuTreeNode}
       _ <- IO.writeLine("=== Железнодорожная касса (монады) ===")
       _ <- IO.writeLine(s"Маршруты: ${cfg.tariffs.keys.mkString(", ")}")
       _ <- IO.writeLine(s"Багаж: ${cfg.baggagePerKg} руб/кг, штраф за возврат: ${cfg.refundPenaltyPercent * 100}%")
-      finalState <- root.userInteractionLoop(initState, cfg)
-      _          <- IO.delay(Storage.save(finalState))  // сохраняем при выходе
-      _          <- IO.writeLine("пока")
+      _ <- root.userInteractionLoop(initState, cfg)
+      _ <- IO.writeLine("пока")
     yield ()
 
   program.unsafeRun()
