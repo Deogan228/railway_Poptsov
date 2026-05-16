@@ -34,8 +34,7 @@ import ui.{MenuLeaf, MenuTreeNode}
       MenuLeaf("Вернуть билет",       cancelTicketAction),
       MenuLeaf("Добавить поезд",      addTrainAction),
       MenuLeaf("Следующий день",      nextDayAction),
-      MenuLeaf("Writer demo",         writerDemoAction),
-      MenuLeaf("Удалить поезд",       removeTrainAction)
+      MenuLeaf("Writer demo",         writerDemoAction)
     )
   )
 

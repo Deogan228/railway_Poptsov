@@ -74,17 +74,3 @@ object FuncState:
       val ns = s.copy(soldTickets = List.empty, revenue = 0.0)
       (ns, Writer.tell(s"Новый день. Выручка за вчера: ${s.revenue}, билеты сброшены.").log)
     }
-
-  def removeTrain(trainName: String): State[OfficeState, Vector[String]] =
-    State { s =>
-      if !s.trains.exists(_.name == trainName) then
-        (s, Writer.tell(s"Ошибка: поезд $trainName не найден").log)
-      else
-        val trainRoute     = s.trains.find(_.name == trainName).map(_.route).getOrElse("")
-        val hasSoldTickets = s.soldTickets.exists(_.route == trainRoute)
-        if hasSoldTickets then
-          (s, Writer.tell(s"Ошибка: на поезд $trainName есть проданные билеты").log)
-        else
-          val ns = s.copy(trains = s.trains.filterNot(_.name == trainName))
-          (ns, Writer.tell(s"Поезд $trainName удалён").log)
-    }

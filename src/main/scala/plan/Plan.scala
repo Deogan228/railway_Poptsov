@@ -114,15 +114,3 @@ def writerDemoAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
     _ <- IO.writeLine("--- Writer demo ---")
     _ <- printLog(logs)
   yield s
-
-def removeTrainAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
-  for
-    _        <- showTrainsAction(s, cfg)
-    trainNum <- readInt("Номер поезда для удаления: ", -1)
-    trainName = if trainNum >= 1 && trainNum <= s.trains.size
-                then s.trains(trainNum - 1).name
-                else ""
-    res      <- runState(s, FuncState.removeTrain(trainName))
-    (ns, log) = res
-    _        <- printLog(log)
-  yield ns
