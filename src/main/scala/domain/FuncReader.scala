@@ -2,10 +2,9 @@ package domain
 
 import monads.{*, given}
 
-// Доступ к конфигурации кассы через монаду Reader
+// функции для чтения из конфига через Reader
 object FuncReader:
 
-  // Стоимость билета по маршруту и классу обслуживания
   def ticketPrice(route: String, classType: ClassType): Reader[TicketConfig, Option[Double]] =
     Reader { cfg =>
       cfg.tariffs.get(route).map { t =>
@@ -15,21 +14,21 @@ object FuncReader:
       }
     }
 
-  // Доплата за багаж по весу (кг)
+  // если вес <= 0 считаем что багажа нет
   def baggageCost(weight: Double): Reader[TicketConfig, Double] =
     Reader { cfg =>
-      if weight <= 0 then 0.0 else weight * cfg.baggagePerKg
+      if weight <= 0 then 0.0
+      else weight * cfg.baggagePerKg
     }
 
-  // Проверка: свободно ли указанное место в поезде
   def seatAvailable(train: Train, seat: String): Reader[TicketConfig, Boolean] =
     Reader { _ =>
       train.seats.get(seat) match
         case Some(occupied) => !occupied
-        case None           => false
+        case None           => false  // места вообще нет
     }
 
-  // Сумма возврата за билет (цена + багаж минус штраф)
+  // возврат = (цена + багаж) * (1 - штраф)
   def refundAmount(ticket: Ticket): Reader[TicketConfig, Double] =
     Reader { cfg =>
       val total = ticket.price + ticket.baggageCost

@@ -1,43 +1,40 @@
 package domain
 
-// Класс обслуживания
 enum ClassType:
   case Economy, Business
 
-// Тариф по маршруту
 case class RouteTariff(
-  route: String,          // название маршрута, напр. "Moscow-SPb"
-  economy: Double,        // цена эконом-класса
-  business: Double        // цена бизнес-класса
+  route: String,
+  economy: Double,
+  business: Double
 )
 
-// Конфигурация кассы (окружение для Reader)
+// конфиг кассы, передаётся через Reader
 case class TicketConfig(
-  tariffs: Map[String, RouteTariff],   // маршрут -> тариф
-  baggagePerKg: Double,               // доплата за кг багажа
-  seatRule: String,                    // правило выбора места: "window" | "aisle" | "any"
-  refundPenaltyPercent: Double         // штраф за возврат (доля от 0 до 1)
+  tariffs: Map[String, RouteTariff],
+  baggagePerKg: Double,
+  seatRule: String,                    // "window" | "aisle" | "any", пока не используется
+  refundPenaltyPercent: Double         // доля штрафа, напр. 0.15 = 15%
 )
 
-// Проданный билет
 case class Ticket(
   id: Int,
   route: String,
   classType: ClassType,
-  seat: String,           // напр. "3A"
+  seat: String,
   price: Double,
   baggageWeight: Double,
   baggageCost: Double
 )
 
-// Поезд с картой занятости мест
+// seats: место -> занято (true) или свободно (false)
 case class Train(
-  name: String,                     // напр. "Express-1"
+  name: String,
   route: String,
-  seats: Map[String, Boolean]       // место -> занято?
+  seats: Map[String, Boolean]
 )
 
-// Глобальное состояние кассы
+// всё состояние кассы в одном месте
 case class OfficeState(
   trains: List[Train],
   soldTickets: List[Ticket],

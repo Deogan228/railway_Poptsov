@@ -1,6 +1,62 @@
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
 [0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
-[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 54 products, 14 sources, 2 libraries[0m
-[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/plan/Plan.scala, ${BASE}/src/main/scala/ui/UserInteraction.scala, ${BASE}/src/main/scala/domain/Types.scala, ${BASE}/src/main/scala/main.scala, ${BASE}/src/main/scala/ui/MenuOption.scala, ${BASE}/src/main/scala/ui/Menu.scala, ${BASE}/src/main/scala/monads/Writer.scala, ${BASE}/src/main/scala/monads/Reader.scala, ${BASE}/src/main/scala/domain/FuncState.scala, ${BASE}/src/main/scala/domain/FuncWriter.scala, ${BASE}/src/main/scala/monads/IO.scala, ${BASE}/src/main/scala/domain/FuncReader.scala, ${BASE}/src/main/scala/monads/Monad.scala, ${BASE}/src/main/scala/monads/State.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
-[0m[[0m[0mdebug[0m] [0m[0mNo changes[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 56 products, 15 sources, 2 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/plan/Plan.scala, ${BASE}/src/main/scala/ui/UserInteraction.scala, ${BASE}/src/main/scala/domain/Types.scala, ${BASE}/src/main/scala/main.scala, ${BASE}/src/main/scala/ui/MenuOption.scala, ${BASE}/src/main/scala/ui/Menu.scala, ${BASE}/src/main/scala/monads/Writer.scala, ${BASE}/src/main/scala/domain/Storage.scala, ${BASE}/src/main/scala/monads/Reader.scala, ${BASE}/src/main/scala/domain/FuncState.scala, ${BASE}/src/main/scala/domain/FuncWriter.scala, ${BASE}/src/main/scala/monads/IO.scala, ${BASE}/src/main/scala/domain/FuncReader.scala, ${BASE}/src/main/scala/monads/Monad.scala, ${BASE}/src/main/scala/monads/State.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/main.scala, ${BASE}/src/main/scala/domain/FuncState.scala, ${BASE}/src/main/scala/plan/Plan.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial source changes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	removed: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(${BASE}/src/main/scala/main.scala, ${BASE}/src/main/scala/domain/FuncState.scala, ${BASE}/src/main/scala/plan/Plan.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(main, main$package, domain.FuncState, plan.Plan$package)[0m
+[0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(main, main$package, domain.FuncState, plan.Plan$package)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/src/main/scala/main.scala, ${BASE}/src/main/scala/domain/FuncState.scala, ${BASE}/src/main/scala/plan/Plan.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: main, main$package, domain.FuncState, plan.Plan$package[0m
+[0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 3 Scala sources to D:\fp\railway_FP\target\scala-3.3.1\classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mReturning already retrieved and compiled bridge: C:\Users\Руслан Попцов\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala3-sbt-bridge\3.3.1\scala3-sbt-bridge-3.3.1.jar.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 3ff718e6 for Scala Compiler version 3.3.1[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	D:\fp\railway_FP\target\scala-3.3.1\classes;C:\Users\Руслан Попцов\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala3-library_3\3.3.1\scala3-library_3-3.3.1.jar;C:\Users\Руслан Попцов\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.10\scala-library-2.13.10.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 3.8985954 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mdone compiling[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from domain.FuncState...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: domain.FuncState[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(domain.FuncState)[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of plan.Plan$package: [UsedName(removeTrain,[Default])][0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(domain.FuncState,ModifiedNames(changes = UsedName(removeTrain,[Default]))) invalidates 2 classes due to The domain.FuncState has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(removeTrain,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > by transitive inheritance: Set(domain.FuncState)[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m  > by member reference: Set(plan.Plan$package)[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from plan.Plan$package...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: plan.Plan$package[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(plan.Plan$package)[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of main$package: [UsedName(removeTrainAction,[Default])][0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(plan.Plan$package,ModifiedNames(changes = UsedName(removeTrainAction,[Default]))) invalidates 2 classes due to The plan.Plan$package has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(removeTrainAction,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > by transitive inheritance: Set(plan.Plan$package)[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m  > by member reference: Set(main$package)[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
+[0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	main$package[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: main$package[0m
+[0m[[0m[0mdebug[0m] [0m[0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0m[0mdebug[0m] [0m[0mFinal step, transitive dependencies:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Set(main$package)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: main, main$package, domain.FuncState, plan.Plan$package[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding plan.Plan$package by domain.FuncState[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated macros due to upstream dependencies change: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mNo classes were invalidated.[0m
