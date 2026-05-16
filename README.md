@@ -21,9 +21,13 @@ sbt "Test / runMain RailwayTests"
 ## Структура проекта
 
 src/main/scala/
+
 ├── monads/      — реализации монад (Monad, IO, Reader, Writer, State)
+
 ├── domain/      — предметная область (типы, Reader/Writer/State функции)
+
 ├── plan/        — сценарий IO (действия меню)
+
 └── ui/          — меню и цикл взаимодействия
 
 ## Что где используется
