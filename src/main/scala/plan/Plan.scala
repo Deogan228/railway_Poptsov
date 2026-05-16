@@ -7,8 +7,10 @@ import domain.{OfficeState, TicketConfig, ClassType, Train, FuncState, FuncWrite
 def runState[A](s: OfficeState, action: State[OfficeState, A]): IO[(OfficeState, A)] =
   IO.delay(action.run(s))
 
+// печать лога одной строкой
 def printLog(log: Vector[String]): IO[Unit] =
-  log.foldLeft(IO.pure(()))((acc, line) => acc.flatMap(_ => IO.writeLine("  " + line)))
+  if log.isEmpty then IO.pure(())
+  else IO.writeLine(log.map("  " + _).mkString("\n"))
 
 def readInt(prompt: String, fallback: Int): IO[Int] =
   for
@@ -29,16 +31,18 @@ def readStr(prompt: String): IO[String] =
   yield str.trim
 
 def showTrainsAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
-  val info = s.trains.zipWithIndex.map { case (t, i) =>
-    val free = t.seats.count(!_._2)
+  val lines = s.trains.zipWithIndex.map { case (t, i) =>
+    val free = t.seats.count { case (_, occupied) => !occupied }
     s"  ${i + 1}. ${t.name} | ${t.route} | свободно: $free/${t.seats.size}"
-  }.mkString("\n")
+  }
+  val info = lines.mkString("\n")
   IO.writeLine(if info.isEmpty then "  поездов нет" else info).map(_ => s)
 
 def showTicketsAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
-  val info = s.soldTickets.map { t =>
+  val lines = s.soldTickets.map { t =>
     s"  #${t.id} ${t.route} ${t.classType} место=${t.seat} цена=${t.price} багаж=${t.baggageCost}"
-  }.mkString("\n")
+  }
+  val info = lines.mkString("\n")
   IO.writeLine(if info.isEmpty then "  билетов нет" else info).map(_ => s)
 
 def bookTicketAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
@@ -48,19 +52,13 @@ def bookTicketAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
     trainName  = if trainNum >= 1 && trainNum <= s.trains.size
                  then s.trains(trainNum - 1).name
                  else ""
-    // показываем свободные места выбранного поезда
-    _         <- IO.writeLine(
-                      s.trains.find(_.name == trainName).map { t =>
-                        val freeByRow = t.seats
-                          .filter(!_._2)
-                          .keys.toList
-                          .groupBy(seat => seat.dropRight(1).toIntOption.getOrElse(0))
-                          .toList.sortBy(_._1)
-                          .map { case (row, seats) => s"  Ряд $row: ${seats.sorted.mkString("  ")}" }
-                          .mkString("\n")
-                        s"Свободные места:\n$freeByRow"
-                      }.getOrElse("Поезд не найден")
-                    )
+    // показать свободные места выбранного поезда
+    _         <- s.trains.find(_.name == trainName) match
+                   case Some(t) =>
+                     val freeSeats = t.seats.filter { case (_, occupied) => !occupied }.keys.toList.sorted
+                     IO.writeLine(s"Свободные места: ${freeSeats.mkString(", ")}")
+                   case None =>
+                     IO.writeLine("Поезд не найден")
     seat      <- readStr("Место: ")
     clsStr    <- readStr("Класс (economy/business): ")
     cls        = if clsStr.toLowerCase.startsWith("b") then ClassType.Business else ClassType.Economy
@@ -83,15 +81,21 @@ def addTrainAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
   for
     name   <- readStr("Название поезда: ")
     route  <- readStr("Маршрут (напр. Moscow-SPb): ")
-    nSeats <- readInt("Количество рядов: ", 10)
-    seats   = (1 to nSeats).flatMap { row =>
-                Seq("A", "B", "C", "D").map(col => s"$row$col" -> false)
-              }.toMap
+    nRows  <- readInt("Количество рядов: ", 10)
+    seats   = makeSeats(nRows)
     train   = Train(name, route, seats)
     res    <- runState(s, FuncState.addTrain(train))
     (ns, log) = res
     _      <- printLog(log)
   yield ns
+
+// создание карты мест: nRows рядов по 4 места (A, B, C, D)
+def makeSeats(nRows: Int): Map[String, Boolean] =
+  val pairs = for
+    r <- 1 to nRows
+    c <- Seq("A", "B", "C", "D")
+  yield s"$r$c" -> false
+  pairs.toMap
 
 def nextDayAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
   for
@@ -100,7 +104,6 @@ def nextDayAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
     _        <- printLog(log)
   yield ns
 
-// показывает как работает Writer отдельно от State
 def writerDemoAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
   val w1 = FuncWriter.logRouteChoice("Moscow-SPb")
   val w2 = FuncWriter.logPriceCalc("Moscow-SPb", 3500, 200)
@@ -111,7 +114,7 @@ def writerDemoAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
     _ <- IO.writeLine("--- Writer demo ---")
     _ <- printLog(logs)
   yield s
-  
+
 def removeTrainAction(s: OfficeState, cfg: TicketConfig): IO[OfficeState] =
   for
     _        <- showTrainsAction(s, cfg)

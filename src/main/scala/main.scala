@@ -15,9 +15,6 @@ import ui.{MenuLeaf, MenuTreeNode}
     refundPenaltyPercent = 0.15
   )
 
-  def makeSeats(rows: Int): Map[String, Boolean] =
-    (1 to rows).flatMap(r => Seq("A", "B", "C", "D").map(c => s"$r$c" -> false)).toMap
-
   val initState = OfficeState(
     trains = List(
       Train("Express-1", "Moscow-SPb",   makeSeats(3)),

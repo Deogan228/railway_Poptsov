@@ -48,7 +48,6 @@ object FuncState:
           (s, Writer.tell(s"Ошибка: билет #$ticketId не найден").log)
         case Some(ticket) =>
           val refund = FuncReader.refundAmount(ticket).run(cfg)
-          // TODO: тут баг если два поезда на одном маршруте — место освободится не в том
           val updatedTrains = s.trains.map { t =>
             if t.route == ticket.route then t.copy(seats = t.seats.updated(ticket.seat, false))
             else t
@@ -75,13 +74,17 @@ object FuncState:
       val ns = s.copy(soldTickets = List.empty, revenue = 0.0)
       (ns, Writer.tell(s"Новый день. Выручка за вчера: ${s.revenue}, билеты сброшены.").log)
     }
+
   def removeTrain(trainName: String): State[OfficeState, Vector[String]] =
-      State { s =>
-        if !s.trains.exists(_.name == trainName) then
-          (s, Writer.tell(s"Ошибка: поезд $trainName не найден").log)
-        else if s.soldTickets.exists(_.route == s.trains.find(_.name == trainName).map(_.route).getOrElse("")) then
+    State { s =>
+      if !s.trains.exists(_.name == trainName) then
+        (s, Writer.tell(s"Ошибка: поезд $trainName не найден").log)
+      else
+        val trainRoute     = s.trains.find(_.name == trainName).map(_.route).getOrElse("")
+        val hasSoldTickets = s.soldTickets.exists(_.route == trainRoute)
+        if hasSoldTickets then
           (s, Writer.tell(s"Ошибка: на поезд $trainName есть проданные билеты").log)
         else
           val ns = s.copy(trains = s.trains.filterNot(_.name == trainName))
           (ns, Writer.tell(s"Поезд $trainName удалён").log)
-      }
+    }
